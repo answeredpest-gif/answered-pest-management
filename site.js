@@ -1,3 +1,5 @@
+const fixCss=document.createElement('link');fixCss.rel='stylesheet';fixCss.href='/responsive-fix.css?v=12';document.head.appendChild(fixCss);
+
 const logoMarkup=`<span class="logo-lockup" aria-hidden="true"><span class="logo-top"><span class="logo-bug">✦</span><span class="logo-apm">APM</span><span class="logo-target"><i></i></span></span><span class="logo-answered">Answered</span><span class="logo-pest">Pest Management</span></span>`;
 document.querySelectorAll('.brand,.footer-brand').forEach(el=>{if(el.querySelector('img'))el.innerHTML=logoMarkup;});
 
