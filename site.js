@@ -1,4 +1,5 @@
-const refCss=document.createElement('link');refCss.rel='stylesheet';refCss.href='/reference.css?v=8';document.head.appendChild(refCss);
+const refCss=document.createElement('link');refCss.rel='stylesheet';refCss.href='/reference.css?v=9';document.head.appendChild(refCss);
+const pagesCss=document.createElement('link');pagesCss.rel='stylesheet';pagesCss.href='/pages.css?v=9';document.head.appendChild(pagesCss);
 
 const menuBtn=document.querySelector('.hamburger');
 const nav=document.querySelector('.desktop-nav');
