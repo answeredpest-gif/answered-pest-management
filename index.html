@@ -41,45 +41,44 @@
 
   <link rel="stylesheet" href="/styles.css" />
 </head>
-
 <body>
   <header class="header">
     <div class="wrap header-inner">
-      <a class="logo" href="/" aria-label="Answered Pest Management home">
+      <a class="logo" href="#top" aria-label="Answered Pest Management home">
         <img src="/assets/apm-logo.png" alt="Answered Pest Management logo" />
       </a>
 
       <nav class="nav" aria-label="Main navigation">
-        <a class="active" href="/">Home</a>
+        <a class="active" href="#top">Home</a>
         <a href="#services">Services</a>
         <a href="#about">About Us</a>
-        <a href="#area">Service Area</a>
+        <a href="#area">Service Areas</a>
+        <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-red btn-sm" href="#quote">Get a Free Quote</a>
-        <a class="btn btn-dark btn-sm" href="tel:+14798410763">479-841-0763</a>
+        <a class="btn btn-red btn-sm" href="#quote"><span class="btn-icon">▦</span>Get a Free Quote</a>
+        <a class="btn btn-dark btn-sm" href="tel:+14798410763"><span class="btn-icon">☎</span>479-841-0763</a>
       </div>
 
       <button class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <div class="wrap hero-inner">
+      <div class="wrap hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">Northwest Arkansas Pest Control</div>
-          <h1>Pest Problems?<span class="red">Answered.</span></h1>
-          <p class="hero-sub">Reliable residential, commercial &amp; general pest control throughout Northwest Arkansas.</p>
+          <h1>Pest Problems?<span>Answered.</span></h1>
+          <p class="hero-sub">Fast, reliable residential, commercial &amp; general pest control throughout Northwest Arkansas.</p>
 
           <div class="hero-buttons">
-            <a class="btn btn-red" href="#quote">Get a Free Quote</a>
-            <a class="btn btn-dark" href="tel:+14798410763">Call 479-841-0763</a>
+            <a class="btn btn-red" href="#quote"><span class="btn-icon">▦</span>Get a Free Quote</a>
+            <a class="btn btn-dark" href="tel:+14798410763"><span class="btn-icon">☎</span>Call 479-841-0763</a>
           </div>
 
-          <div class="trust-row">
+          <div class="trust-row" id="about">
             <div class="trust-item"><span class="trust-icon">✓</span><span>20+ Years<br />Experience</span></div>
             <div class="trust-item"><span class="trust-icon">⌖</span><span>Locally Owned<br />&amp; Operated</span></div>
             <div class="trust-item"><span class="trust-icon">⌂</span><span>Residential &amp;<br />Commercial</span></div>
@@ -89,14 +88,14 @@
         </div>
 
         <aside class="quote-card" id="quote">
-          <h2>Get Your <span class="red">Free</span> Quote</h2>
-          <p class="intro">Tell us what’s going on and send APM a pre-filled service request.</p>
+          <h2>Get Your <span>Free</span> Quote</h2>
+          <p class="intro">Tell us what you need and send APM a pre-filled service request.</p>
 
           <form id="quoteForm">
-            <div class="field"><input name="name" autocomplete="name" placeholder="Full Name" required /></div>
-            <div class="field"><input name="email" type="email" autocomplete="email" placeholder="Email Address" /></div>
-            <div class="field"><input name="phone" type="tel" autocomplete="tel" placeholder="Phone Number" /></div>
-            <div class="field">
+            <div class="field"><span>♙</span><input name="name" autocomplete="name" placeholder="Full Name" required /></div>
+            <div class="field"><span>✉</span><input name="email" type="email" autocomplete="email" placeholder="Email Address" /></div>
+            <div class="field"><span>⌕</span><input name="phone" type="tel" autocomplete="tel" placeholder="Phone Number" /></div>
+            <div class="field"><span>☷</span>
               <select name="service" aria-label="Service needed">
                 <option value="General Pest Control">Service Needed</option>
                 <option>Residential Pest Control</option>
@@ -105,41 +104,49 @@
                 <option>Custom Pest Solution</option>
               </select>
             </div>
-            <div class="field"><textarea name="message" placeholder="How can we help?"></textarea></div>
-            <button class="submit" type="submit">Send Quote Request →</button>
-            <p class="form-note">This currently opens a pre-filled text to APM.</p>
+            <div class="field textarea-field"><span>▢</span><textarea name="message" placeholder="How can we help?"></textarea></div>
+            <button class="submit" type="submit">Submit Request <b>→</b></button>
+            <p class="form-note">▣ Your request is sent directly to APM.</p>
             <p class="form-status" id="formStatus" aria-live="polite"></p>
           </form>
         </aside>
       </div>
     </section>
 
-    <section class="section-dark" id="services">
+    <section class="services-section" id="services">
       <div class="wrap">
-        <div class="section-title"><h2>Complete Pest Control Solutions</h2></div>
-        <p class="section-sub">Dependable pest-control service for homes and businesses across Northwest Arkansas.</p>
+        <div class="section-title"><span></span><h2>Complete Pest Control Solutions</h2><span></span></div>
+        <p class="section-sub">Protecting homes and businesses across Northwest Arkansas with dependable local service.</p>
 
         <div class="services-grid">
-          <div class="service-card">
+          <article class="service-card">
             <div class="service-icon">⌂</div>
-            <h3>Residential Pest Control</h3>
-            <p>Professional pest-control solutions designed to help protect your home and family from unwanted pests.</p>
-          </div>
-          <div class="service-card">
+            <div>
+              <h3>Residential<br />Pest Control</h3>
+              <p>Professional pest-control solutions designed to help protect your home and family from unwanted pests.</p>
+            </div>
+          </article>
+          <article class="service-card">
             <div class="service-icon">▥</div>
-            <h3>Commercial Pest Control</h3>
-            <p>Customized pest-management service for businesses that need dependable, professional help.</p>
-          </div>
-          <div class="service-card">
+            <div>
+              <h3>Commercial<br />Pest Control</h3>
+              <p>Customized pest-management service for businesses that need dependable, professional help.</p>
+            </div>
+          </article>
+          <article class="service-card">
             <div class="service-icon">✹</div>
-            <h3>General Pest Control</h3>
-            <p>Practical help with common pest problems around homes and businesses.</p>
-          </div>
-          <div class="service-card">
+            <div>
+              <h3>General Pest<br />Control</h3>
+              <p>Practical help with common pest problems around homes and businesses throughout Northwest Arkansas.</p>
+            </div>
+          </article>
+          <article class="service-card">
             <div class="service-icon">◎</div>
-            <h3>Custom Pest Solutions</h3>
-            <p>Every property is different. APM can recommend an approach based on your specific pest problem.</p>
-          </div>
+            <div>
+              <h3>Custom Pest<br />Solutions</h3>
+              <p>Every property is different. APM can recommend an approach based on your specific pest problem.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -147,57 +154,29 @@
     <section class="area-strip" id="area">
       <div class="wrap area-grid">
         <div class="area-copy">
-          <div class="pin">⌖</div>
+          <div class="map-pin">●</div>
           <div>
             <h2>Proudly Serving Northwest Arkansas</h2>
-            <p>Local pest-control service for homes and businesses throughout Northwest Arkansas.</p>
+            <p class="cities">Bentonville <b>•</b> Rogers <b>•</b> Springdale <b>•</b> Fayetteville <b>•</b> Cave Springs<br />Centerton <b>•</b> Pea Ridge <b>•</b> Lowell <b>•</b> Siloam Springs <b>•</b> and surrounding areas</p>
             <p class="tagline">If it crawls or flies, it dies.</p>
           </div>
         </div>
 
-        <div class="review-prompt">
+        <div class="review-block" id="reviews">
           <div class="stars">★★★★★</div>
-          <h3>Need pest control you can actually reach?</h3>
-          <p>Call Answered Pest Management or request a quote and get your service request moving.</p>
+          <div class="review-title">Local Service. Fast Response.</div>
+          <p>Professional pest control with straightforward communication for Northwest Arkansas homes and businesses.</p>
+          <a href="#quote">Request Service <span>→</span></a>
         </div>
       </div>
     </section>
 
     <section class="trust-strip">
-      <div class="wrap trust-strip-inner">
-        <div class="trust-badge"><span>✓</span>Experienced Service</div>
-        <div class="trust-badge"><span>✓</span>Customized Solutions</div>
-        <div class="trust-badge"><span>✓</span>Residential &amp; Commercial</div>
-        <div class="trust-badge"><span>✓</span>Easy to Reach</div>
-      </div>
-    </section>
-
-    <section class="why" id="about">
-      <div class="wrap why-grid">
-        <div>
-          <h2>Why Choose <span class="red">Answered Pest Management?</span></h2>
-          <p>APM combines local service, practical pest-control experience, and straightforward communication for Northwest Arkansas homes and businesses.</p>
-        </div>
-
-        <div class="checks">
-          <div class="check"><b>✓</b>20+ Years of Experience</div>
-          <div class="check"><b>✓</b>Fast Response</div>
-          <div class="check"><b>✓</b>Locally Owned &amp; Operated</div>
-          <div class="check"><b>✓</b>Custom Recommendations</div>
-          <div class="check"><b>✓</b>Residential &amp; Commercial</div>
-          <div class="check"><b>✓</b>Straightforward Service</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="final-cta">
-      <div class="wrap">
-        <h2>If It Crawls or Flies, <span class="red">It Dies.</span></h2>
-        <p>Don’t let pests take over. Contact Answered Pest Management and request service today.</p>
-        <div class="hero-buttons">
-          <a class="btn btn-red" href="#quote">Get a Free Quote</a>
-          <a class="btn btn-dark" href="tel:+14798410763">Call 479-841-0763</a>
-        </div>
+      <div class="wrap trust-grid">
+        <div><span>♢</span>Experienced Service</div>
+        <div><span>✓</span>Customized Solutions</div>
+        <div><span>⌂</span>Family Owned &amp; Local</div>
+        <div><span>◆</span>Honest &amp; Dependable</div>
       </div>
     </section>
   </main>
@@ -210,29 +189,34 @@
 
       <div>
         <h4>Quick Links</h4>
-        <a href="/">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About Us</a>
-        <a href="#area">Service Area</a>
-        <a href="#contact">Contact</a>
+        <div class="footer-links two-col">
+          <a href="#top">Home</a>
+          <a href="#area">Service Areas</a>
+          <a href="#services">Services</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+        </div>
       </div>
 
       <div>
         <h4>Services</h4>
-        <a href="#services">Residential Pest Control</a>
-        <a href="#services">Commercial Pest Control</a>
-        <a href="#services">General Pest Control</a>
-        <a href="#services">Custom Pest Solutions</a>
+        <div class="footer-links two-col services-links">
+          <a href="#services">Residential Pest Control</a>
+          <a href="#services">General Pest Control</a>
+          <a href="#services">Commercial Pest Control</a>
+          <a href="#services">Custom Solutions</a>
+        </div>
       </div>
 
       <div>
-        <h4>Contact</h4>
-        <a href="tel:+14798410763">479-841-0763</a>
-        <p>Northwest Arkansas</p>
-        <a class="btn btn-red btn-sm" href="#quote">Request a Quote</a>
+        <h4>Contact Us</h4>
+        <div class="contact-lines">
+          <a href="tel:+14798410763">☎ &nbsp;479-841-0763</a>
+          <p>⌖ &nbsp;Northwest Arkansas</p>
+        </div>
       </div>
     </div>
-
     <div class="wrap copyright">© 2026 Answered Pest Management. All rights reserved.</div>
   </footer>
 
