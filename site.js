@@ -1,16 +1,16 @@
-const fixCss=document.createElement('link');fixCss.rel='stylesheet';fixCss.href='/responsive-fix.css?v=12';document.head.appendChild(fixCss);
-
-const logoMarkup=`<span class="logo-lockup" aria-hidden="true"><span class="logo-top"><span class="logo-bug">✦</span><span class="logo-apm">APM</span><span class="logo-target"><i></i></span></span><span class="logo-answered">Answered</span><span class="logo-pest">Pest Management</span></span>`;
-document.querySelectorAll('.brand,.footer-brand').forEach(el=>{if(el.querySelector('img'))el.innerHTML=logoMarkup;});
-
 const menuBtn=document.querySelector('.hamburger');
 const nav=document.querySelector('.desktop-nav');
 if(menuBtn&&nav){
   menuBtn.addEventListener('click',()=>{
-    nav.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded',nav.classList.contains('open')?'true':'false');
+    const isOpen=nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded',isOpen?'true':'false');
+    menuBtn.textContent=isOpen?'×':'☰';
   });
-  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    nav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false');
+    menuBtn.textContent='☰';
+  }));
 }
 
 const quoteForm=document.querySelector('#quoteForm');
@@ -18,9 +18,23 @@ if(quoteForm){
   quoteForm.addEventListener('submit',e=>{
     e.preventDefault();
     const d=new FormData(quoteForm);
-    const body=`Hi Answered Pest Management, I'd like a quote.%0A%0AName: ${encodeURIComponent(d.get('name')||'')}%0AEmail: ${encodeURIComponent(d.get('email')||'')}%0APhone: ${encodeURIComponent(d.get('phone')||'')}%0AService: ${encodeURIComponent(d.get('service')||'General Pest Control')}%0ADetails: ${encodeURIComponent(d.get('message')||'')}`;
+    const name=(d.get('name')||'').toString().trim();
+    const phone=(d.get('phone')||'').toString().trim();
+    const email=(d.get('email')||'').toString().trim();
+    const service=(d.get('service')||'General Pest Control').toString();
+    const details=(d.get('message')||'').toString().trim();
+    const plain=`Hi Answered Pest Management, I'd like a free quote.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nDetails: ${details}`;
     const status=document.querySelector('#formStatus');
-    if(status)status.textContent='Opening a pre-filled text message to APM…';
-    window.location.href=`sms:+14798410763?&body=${body}`;
+    const isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if(isMobile){
+      if(status)status.textContent='Opening a pre-filled message to APM…';
+      window.location.href=`sms:+14798410763?&body=${encodeURIComponent(plain)}`;
+    }else{
+      if(status)status.textContent='Opening a pre-filled email to APM…';
+      window.location.href=`mailto:info@answeredpest.com?subject=${encodeURIComponent('Free Pest Control Quote Request')}&body=${encodeURIComponent(plain)}`;
+    }
   });
 }
+
+const year=document.querySelector('[data-year]');
+if(year)year.textContent=new Date().getFullYear();
