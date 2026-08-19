@@ -1,0 +1,1 @@
+The production homepage uses /assets/apm-logo-v17.webp (cropped directly from the owner's uploaded APM logo) and /assets/hero-house-v17.webp (clean house-only crop used for the approved reference layout).
